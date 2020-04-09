@@ -57,7 +57,7 @@ public class EditAndSandWindow {
             showFlow.setTextAlignment(TextAlignment.RIGHT);
         }
         else {
-            showFlow.setTextAlignment(TextAlignment.LEFT);
+            showFlow.setTextAlignment(TextAlignment.CENTER);
         }
     }
 

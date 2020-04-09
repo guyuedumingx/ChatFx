@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 
@@ -23,6 +24,8 @@ public class Controller implements Initializable{
 
     @FXML
     private TextFlow showFlow;
+    @FXML
+    private VBox showBox;
 
     private ChangeStage chStage;
     private EditAndSandWindow editAndSand;
@@ -51,7 +54,7 @@ public class Controller implements Initializable{
     //javafx的初始化
     public void initialize(URL url, ResourceBundle rb) {
         chStage = new ChangeStage(primaryStage);
-        editAndSand = new EditAndSandWindow(operaStage, showFlow);
+        editAndSand = new EditAndSandWindow(operaStage, showFlow, showBox);
     }
 }
 
