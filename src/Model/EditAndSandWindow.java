@@ -1,5 +1,6 @@
 package Model;
 
+import Control.Settings;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
@@ -32,24 +33,21 @@ public class EditAndSandWindow {
     }
 
     public void addText(boolean isFromMe) {
-        addTime();
         MessageItemPane mip = new MessageItemPane(new Message(editArea));
         mip.setTextAlignment(isFromMe);
         appendMessage(mip);
     }
 
     private void appendMessage(Node Msg) {
-        showFlow.getChildren().addAll(Msg);
+        showFlow.getChildren().addAll(addTime(),Msg);
         scrollPane.setVvalue(1.0);
     }
 
-    public void addTime() {
-        Date d = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("mm:ss");
-        Label time = new Label(sdf.format(d));
+    public MessageItemPane addTime() {
+        TimeLabel time = new TimeLabel();
         MessageItemPane mip = new MessageItemPane(time);
         mip.setCenter();
-        appendMessage(mip);
+        return mip;
     }
 
     class MessageItemPane extends FlowPane {
@@ -80,6 +78,45 @@ public class EditAndSandWindow {
     }
 }
 
+class TimeLabel extends Label {
+    private Date nowTime = new Date();
+    private Date lastMessageTime = Settings.getLastMessageTime();
+    private SimpleDateFormat sdf;
+
+    public TimeLabel() {
+        init();
+    }
+
+    private void init() {
+        //时间差的分钟数
+        int timeDifferenceMin = (int)(nowTime.getTime() - lastMessageTime.getTime()) / (1000*60);
+        //时间差的天数
+        int timeDifferenceDay = timeDifferenceMin / (60*24);
+        //时间差的年数
+        int timeDifferenceYear = timeDifferenceDay / (30*12);
+
+        if (timeDifferenceMin < 3) {
+            setText("");
+        }
+        else if (timeDifferenceDay < 1) {
+            sdf = new SimpleDateFormat("HH:mm");
+            setText(sdf.format(nowTime));
+        }
+        else if (timeDifferenceDay < 3){
+            setText(timeDifferenceDay + "天前");
+        }
+        else if (timeDifferenceYear < 1) {
+           sdf = new SimpleDateFormat("MM/dd HH:mm");
+           setText(sdf.format(nowTime));
+        }
+        else {
+            sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm");
+            setText(sdf.format(nowTime));
+        }
+        Settings.setLastMessageTime(nowTime);
+    }
+
+}
 
 //实现消息的包装
 class Message extends TextFlow{
