@@ -5,12 +5,12 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -24,8 +24,6 @@ public class Controller implements Initializable{
 
     @FXML
     private TextFlow showFlow;
-    @FXML
-    private VBox showBox;
 
     private ChangeStage chStage;
     private EditAndSandWindow editAndSand;
@@ -46,7 +44,14 @@ public class Controller implements Initializable{
     @FXML
     private void addOperaStageMouseAction(MouseEvent e) {
         if(e.getTarget() == butSand) {
-            editAndSand.sandMyText();
+            editAndSand.addText(true);
+        }
+    }
+
+    @FXML
+    private void addOperaStageKeyAction(KeyEvent e) {
+        if (e.getCode() == KeyCode.ENTER) {
+            editAndSand.addText(true);
         }
     }
 
@@ -54,7 +59,7 @@ public class Controller implements Initializable{
     //javafx的初始化
     public void initialize(URL url, ResourceBundle rb) {
         chStage = new ChangeStage(primaryStage);
-        editAndSand = new EditAndSandWindow(operaStage, showFlow, showBox);
+        editAndSand = new EditAndSandWindow(operaStage, showFlow);
     }
 }
 
