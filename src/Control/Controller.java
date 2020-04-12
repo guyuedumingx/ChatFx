@@ -1,9 +1,6 @@
 package Control;
 
-import Model.ContactWindows;
-import Model.EditAndSandWindow;
-import Model.Friend;
-import Model.Operator;
+import Model.*;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -65,56 +62,13 @@ public class Controller implements Initializable{
     public void initialize(URL url, ResourceBundle rb) {
         Operator operator = Operator.getOperator();
         operator.addFriend(new Friend("zhangsan",1112));
+        operator.addFriend(new Friend("lisi",1113));
+        operator.addFriend(new Friend("lisi",1113));
 
-        chStage = new ChangeStage(primaryStage);
+        chStage = ChangeStage.getChangeStage(primaryStage);
         editAndSand = new EditAndSandWindow(operaStage, showFlow);
         contactWindows = new ContactWindows(friendsBox);
     }
-}
-
-class ChangeStage {
-    private AnchorPane primaryStage;
-    private AnchorPane setStage;
-    private AnchorPane contactStage;
-    private AnchorPane operaStage;
-
-    public ChangeStage(AnchorPane primaryStage) {
-        this.primaryStage = primaryStage;
-        init();
-    }
-
-    private void init() {
-        primaryStage = (AnchorPane)primaryStage.lookup("#primaryStage");
-        setStage = (AnchorPane)primaryStage.lookup("#setStage");
-        contactStage = (AnchorPane)primaryStage.lookup("#contactStage");
-        operaStage = (AnchorPane)primaryStage.lookup("#operaStage");
-    }
-
-    public void toSetStage() {
-        contactStage.setVisible(false);
-        operaStage.setVisible(false);
-        if (setStage.isVisible())
-            setStage.setVisible(false);
-        else
-            setStage.setVisible(true);
-    }
-
-    public void toContact() {
-        setStage.setVisible(false);
-        operaStage.setVisible(false);
-        if (contactStage.isVisible())
-            contactStage.setVisible(false);
-        else
-            contactStage.setVisible(true);
-    }
-
-    public void toOpera() {
-        if (operaStage.isVisible())
-            operaStage.setVisible(true);
-        else
-            operaStage.setVisible(false);
-    }
-
 }
 
 //拖动窗口

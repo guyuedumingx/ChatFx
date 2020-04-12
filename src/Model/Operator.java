@@ -1,10 +1,5 @@
 package Model;
 
-import Control.Settings;
-import javafx.scene.image.ImageView;
-import javafx.scene.text.TextFlow;
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 
 

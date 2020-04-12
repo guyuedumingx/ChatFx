@@ -129,33 +129,32 @@
                </font>
             </TextField>
          </children></AnchorPane>
-      <AnchorPane fx:id="contactStage" layoutY="99.0" prefHeight="496.0" prefWidth="328.0" style="-fx-background-color: #5d655f; -fx-background-radius: 20.0px;">
+      <AnchorPane fx:id="contactStage" layoutY="99.0" prefHeight="496.0" prefWidth="328.0" style="-fx-background-color: #5d655f;">
          <children>
+            <ScrollPane focusTraversable="false" hbarPolicy="NEVER" prefHeight="496.0" prefWidth="328.0" style="-fx-background-color: transparents;" vbarPolicy="NEVER">
+               <content>
+                  <VBox fx:id="friendsBox" prefHeight="496.0" prefWidth="328.0" stylesheets="@Style.css">
+                     <children>
+                        <TextField focusTraversable="false" prefHeight="25.0" prefWidth="300.0" promptText="Search" style="-fx-background-radius: 20.0px; -fx-background-color: #e2e1e4;" />
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
             <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="140.0" layoutY="-15.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/sow.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="bg_conatct" fitHeight="64.0" fitWidth="76.0" layoutX="132.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="bg_conatct" fitHeight="64.0" fitWidth="76.0" layoutX="132.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true" visible="false">
                <image>
                   <Image url="@images/user.png" />
                </image>
             </ImageView>
-            <Label layoutX="132.0" layoutY="199.0" prefHeight="31.0" prefWidth="64.0" text="Contact" textFill="#f2f0f0">
+            <Label layoutX="132.0" layoutY="199.0" prefHeight="31.0" prefWidth="64.0" text="Contact" textFill="#f2f0f0" visible="false">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <VBox fx:id="friendsBox" layoutX="-2.0" layoutY="-1.0" prefHeight="496.0" prefWidth="328.0" stylesheets="@Style.css">
-               <children>
-                  <TextField focusTraversable="false" prefHeight="25.0" prefWidth="300.0" promptText="Search" style="-fx-background-radius: 20.0px; -fx-background-color: #e2e1e4;" />
-                  <Button fx:id="user" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="74.0" prefWidth="329.0" style="-fx-background-color: #9fa39a;" text="Harden" textAlignment="RIGHT" textFill="WHITE">
-                     <font>
-                        <Font size="31.0" />
-                     </font>
-                  </Button>
-               </children>
-            </VBox>
          </children>
       </AnchorPane>
    </children>
