@@ -2,17 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Control/Settings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/History.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Operator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/ContactWindows.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Chat/Control/ChangeStage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat/Control/ChangeStage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Chat/Control/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat/Control/Controller.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Chat/Control/DragWindowHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat/Control/DragWindowHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chat/Model/EditAndSandWindow$MessageItemPane.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat/Model/EditAndSandWindow$MessageItemPane.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chat/Model/EditAndSandWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat/Model/EditAndSandWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Chat/Control/Settings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat/Control/Settings.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Chat/Model/Friends.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Chat/Model/History.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat/Model/History.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Chat/Model/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat/Model/Message.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Chat/Model/Operator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat/Model/Operator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Chat/Model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat/Model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Chat/View/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat/View/Style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Chat/View/windows.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat/View/windows.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Settings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/EditAndSandWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EditAndSandWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/History.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/History.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Operator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Operator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/windows.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/windows.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +233,9 @@
       <workItem from="1586369649468" duration="4388000" />
       <workItem from="1586458845746" duration="4579000" />
       <workItem from="1586463445281" duration="18069000" />
-      <workItem from="1586519203817" duration="12189000" />
+      <workItem from="1586519203817" duration="13531000" />
+      <workItem from="1586700909492" duration="10043000" />
+      <workItem from="1586720773856" duration="3408000" />
     </task>
     <servers />
   </component>
@@ -248,26 +259,26 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="691" y="283" width="528" height="481" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1586357772698" />
-    <state width="1874" height="130" key="GridCell.Tab.0.bottom" timestamp="1586538214133">
+    <state width="1878" height="410" key="GridCell.Tab.0.bottom" timestamp="1586724536819">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1866" height="65" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1586358200748" />
-    <state width="1874" height="130" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1586538214133" />
-    <state width="1874" height="130" key="GridCell.Tab.0.center" timestamp="1586538214132">
+    <state width="1878" height="410" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1586724536819" />
+    <state width="1878" height="410" key="GridCell.Tab.0.center" timestamp="1586724536818">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1866" height="65" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1586358200748" />
-    <state width="1874" height="130" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1586538214132" />
-    <state width="1874" height="130" key="GridCell.Tab.0.left" timestamp="1586538214132">
+    <state width="1878" height="410" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1586724536818" />
+    <state width="1878" height="410" key="GridCell.Tab.0.left" timestamp="1586724536818">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1866" height="65" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1586358200748" />
-    <state width="1874" height="130" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1586538214132" />
-    <state width="1874" height="130" key="GridCell.Tab.0.right" timestamp="1586538214133">
+    <state width="1878" height="410" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1586724536818" />
+    <state width="1878" height="410" key="GridCell.Tab.0.right" timestamp="1586724536818">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1866" height="65" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1586358200748" />
-    <state width="1874" height="130" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1586538214133" />
+    <state width="1878" height="410" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1586724536818" />
     <state width="1874" height="405" key="GridCell.Tab.1.bottom" timestamp="1586482269892">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -284,9 +295,9 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1874" height="405" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1586482269892" />
-    <state x="449" y="240" width="1011" height="634" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1586465788738">
+    <state x="449" y="240" width="1011" height="634" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1586723512266">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="449" y="240" width="1011" height="634" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1586465788738" />
+    <state x="449" y="240" width="1011" height="634" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1586723512266" />
   </component>
 </project>

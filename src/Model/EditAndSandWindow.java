@@ -135,10 +135,14 @@ class Message extends TextFlow{
     private void init() {
         //一行最大的宽度
         setMaxWidth(500);
+
         getStyleClass().add("bubble");
+
         //内间距
         setPadding(new Insets(10));
+
         String Color = "-fx-background-color: " + showColor;
+
         setStyle(Color);
     }
 

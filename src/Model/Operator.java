@@ -1,13 +1,38 @@
 package Model;
 
-import javax.swing.text.html.ImageView;
+import Control.Settings;
+import javafx.scene.image.ImageView;
+import javafx.scene.text.TextFlow;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+
 
 public class Operator extends User{
     private static Operator operator = new Operator();
+    private ArrayList<Friend> friendList = new ArrayList<>();
 
     private Operator() {
         setName("wangwu");
         setAccount(1111);
+    }
+
+    public void addFriend(Friend f) {
+        friendList.add(f);
+    }
+
+    public void deleteFriend(Friend f) {
+        friendList.remove(f);
+    }
+
+    public ArrayList<Friend> getFriendList() {
+        return friendList;
+    }
+
+    public Friend getUserInfo() {
+        Friend f = new Friend(name, account);
+        f.setIcon(icon);
+        return f;
     }
 
     public static Operator getOperator() {
@@ -15,35 +40,4 @@ public class Operator extends User{
     }
 }
 
-class Friends extends User {
-
-}
-
-
-class User {
-    private String name;
-    private int account;
-    private ImageView icon;
-
-    public void setName(String name) {
-        this.name = name;
-    }
-    public String getName() {
-        return name;
-    }
-
-    public void setAccount(int account) {
-        this.account = account;
-    }
-    public int getAccount() {
-        return account;
-    }
-
-    public void setIcon(ImageView icon) {
-
-    }
-    public ImageView getIcon() {
-        return icon;
-    }
-}
 

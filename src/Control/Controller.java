@@ -1,6 +1,9 @@
 package Control;
 
+import Model.ContactWindows;
 import Model.EditAndSandWindow;
+import Model.Friend;
+import Model.Operator;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -9,6 +12,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 import java.net.URL;
@@ -21,13 +25,14 @@ public class Controller implements Initializable{
     private ImageView butClose, butContact, butSettings;
     @FXML
     private ImageView butEmoji, butImage, butGif, butSand;
-
+    @FXML
+    private VBox friendsBox;
     @FXML
     private TextFlow showFlow;
 
     private ChangeStage chStage;
     private EditAndSandWindow editAndSand;
-
+    private ContactWindows contactWindows;
     @FXML
     private void addToolBarAction(MouseEvent e) {
        if(e.getTarget() == butClose) {
@@ -58,8 +63,12 @@ public class Controller implements Initializable{
 
     //javafx的初始化
     public void initialize(URL url, ResourceBundle rb) {
+        Operator operator = Operator.getOperator();
+        operator.addFriend(new Friend("zhangsan",1112));
+
         chStage = new ChangeStage(primaryStage);
         editAndSand = new EditAndSandWindow(operaStage, showFlow);
+        contactWindows = new ContactWindows(friendsBox);
     }
 }
 
