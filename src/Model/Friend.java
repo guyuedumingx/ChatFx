@@ -6,11 +6,7 @@ import java.io.File;
 
 public class Friend extends User {
 
-    String histroyFileName;
-    Settings set = Settings.getSettings();
-
     File historyFile;
-
     ShowFlow historyFlow;
 
     public Friend(String name, int account) {
@@ -20,13 +16,12 @@ public class Friend extends User {
     }
 
     private void init() {
-        histroyFileName = name + ".ser";
-        historyFile = new File(histroyFileName);
+        historyFile = Settings.getHistoryFile(this);
     }
 
     public ShowFlow getHistoryFlow() {
         if (historyFlow == null) {
-            historyFlow = new History().readHistory(historyFile);
+            historyFlow = new ReadHistory(this).readHistory();
             historyFlow.prefHeightProperty().bind(EditAndSandWindow.getScrollPane().prefHeightProperty());
             historyFlow.prefWidthProperty().bind(EditAndSandWindow.getScrollPane().prefWidthProperty());
         }
