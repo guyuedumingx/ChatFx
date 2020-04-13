@@ -4,7 +4,6 @@ import Control.Settings;
 import javafx.scene.text.TextFlow;
 
 import java.io.File;
-import java.io.IOException;
 
 public class Friend extends User {
 
@@ -24,21 +23,6 @@ public class Friend extends User {
     private void init() {
         histroyFileName = name + ".txt";
         historyFile = new File(histroyFileName);
-        setDefaultHistoryFile();
-    }
-
-    private void setDefaultHistoryFile(){
-        if (!historyFile.exists())
-            tryCreateHistoryFile();
-    }
-
-    private void tryCreateHistoryFile() {
-        try {
-            historyFile.createNewFile();
-        }
-        catch (IOException e) {
-
-        }
     }
 
     public TextFlow getHistoryFlow() {

@@ -41,11 +41,18 @@ public class ChangeStage {
 
     public void toOpera(Friend f) {
         if (operaStage.isVisible())
-            operaStage.setVisible(false);
+            isOnCorrectPane(f);
         else {
             operaStage.setVisible(true);
             EditAndSandWindow.setShowFlow(f);
         }
+    }
+
+    private void isOnCorrectPane(Friend f) {
+        if (EditAndSandWindow.getShowFlow() == f.historyFlow)
+            operaStage.setVisible(false);
+        else
+            EditAndSandWindow.setShowFlow(f);
     }
 
     public static ChangeStage getChangeStage(AnchorPane primaryStage) {

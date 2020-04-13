@@ -10,9 +10,12 @@ public class History {
     ObjectInputStream ois;
     ObjectOutputStream oos;
     TextFlow historyFlow;
+    File historyFile;
 
     public TextFlow readHistory(File historyFile) {
+        this.historyFile = historyFile;
         try {
+            setDefaultHistoryFile();
             tryReadHistoryFile(historyFile);
         }
         catch (Exception e) {
@@ -39,11 +42,26 @@ public class History {
         }
     }
 
+    public void writeHistory() {
+        writeHistory(Operator.getOperator());
+    }
 
-    public void writeHistory(TextFlow historyFlow, File historyfile) {
-       this.historyFlow = historyFlow;
+    public void writeHistory(Operator o) {
+        for(Friend f : o.getFriendList()) {
+            writeHistory(f);
+        }
+    }
+
+    public void writeHistory(Friend f) {
+        writeHistory(f.getHistoryFlow(), f.historyFile);
+    }
+
+    public void writeHistory(TextFlow historyFlow, File historyFile) {
+        this.historyFile = historyFile;
+        this.historyFlow = historyFlow;
        try {
-           trywriteHistoryFile(historyfile);
+           setDefaultHistoryFile();
+           trywriteHistoryFile();
        }
        catch (IOException e) {
 
@@ -52,8 +70,8 @@ public class History {
           tryCloseOutputStream();
        }
     }
-    private void trywriteHistoryFile(File historyfile) throws IOException{
-        oos = new ObjectOutputStream(new FileOutputStream(historyfile));
+    private void trywriteHistoryFile() throws IOException{
+        oos = new ObjectOutputStream(new FileOutputStream(historyFile));
         oos.writeObject(historyFlow);
     }
     private void tryCloseOutputStream() {
@@ -65,4 +83,19 @@ public class History {
 
         }
     }
+
+    private void setDefaultHistoryFile(){
+        if (!historyFile.exists())
+            tryCreateHistoryFile();
+    }
+
+    private void tryCreateHistoryFile() {
+        try {
+            historyFile.createNewFile();
+        }
+        catch (IOException e) {
+
+        }
+    }
+
 }

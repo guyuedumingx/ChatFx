@@ -87,6 +87,9 @@ public class EditAndSandWindow {
         EditAndSandWindow.showPaneParent.getChildren().clear();
         EditAndSandWindow.showPaneParent.getChildren().add(showFlow);
     }
+    public static TextFlow getShowFlow() {
+        return showFlow;
+    }
 }
 
 class TimeLabel extends Label {

@@ -29,9 +29,11 @@ public class Controller implements Initializable{
     private ChangeStage chStage;
     private EditAndSandWindow editAndSand;
     private ContactWindows contactWindows;
+    private History history;
     @FXML
     private void addToolBarAction(MouseEvent e) {
        if(e.getTarget() == butClose) {
+           history.writeHistory();
            System.exit(0);
        }
        else if(e.getTarget() == butContact) {
@@ -67,6 +69,7 @@ public class Controller implements Initializable{
         chStage = ChangeStage.getChangeStage(primaryStage);
         editAndSand = new EditAndSandWindow(operaStage, showPaneParent);
         contactWindows = new ContactWindows(friendsBox);
+        history = new History();
     }
 }
 
