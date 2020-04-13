@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import org.dom4j.*;
 
 public class WriteHistory extends History{
     ObjectOutputStream oos;

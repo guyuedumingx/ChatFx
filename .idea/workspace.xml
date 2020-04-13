@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Model/ReadHistory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/WriteHistory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chat/Control/Controller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chat/Control/DragWindowHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chat/Control/Settings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat/Control/Settings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chat/Model/EditAndSandWindow$MessageItemPane.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat/Model/EditAndSandWindow$MessageItemPane.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chat/Model/EditAndSandWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat/Model/EditAndSandWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chat/Model/Friend.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat/Model/Friend.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chat/Model/History.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat/Model/History.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chat/Model/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat/Model/Message.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chat/Model/TimeLabel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat/Model/TimeLabel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Friend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Friend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/History.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/History.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/WriteHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/WriteHistory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,12 +93,16 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/dom4j-2.0.3.jar!/" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="recentsLimit" value="5" />
   </component>
   <component name="RunManager" selected="Application.Main (1)">
@@ -239,7 +229,7 @@
       <workItem from="1586737125003" duration="2387000" />
       <workItem from="1586762011393" duration="4588000" />
       <workItem from="1586767253140" duration="348000" />
-      <workItem from="1586772127458" duration="11447000" />
+      <workItem from="1586772127458" duration="12814000" />
     </task>
     <servers />
   </component>
@@ -271,6 +261,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="466" height="486" key="DebuggerActiveHint/0.27.1920.1053@0.27.1920.1053" timestamp="1586734566420" />
+    <state x="738" y="315" width="424" height="491" key="FileChooserDialogImpl" timestamp="1586793383423">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="738" y="315" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1586793383423" />
     <state width="1878" height="6" key="GridCell.Tab.0.bottom" timestamp="1586788279422">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -307,6 +301,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1878" height="2" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1586777842001" />
+    <state x="443" y="131" width="1024" height="852" key="SettingsEditor" timestamp="1586793388150">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="443" y="131" width="1024" height="852" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1586793388150" />
     <state x="449" y="240" width="1011" height="634" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1586728783158">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
