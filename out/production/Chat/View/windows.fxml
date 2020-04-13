@@ -11,7 +11,7 @@
 
 <AnchorPane fx:id="primaryStage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="595.0" prefWidth="893.0" style="-fx-background-color: #00000000; -fx-background-radius: 20.0px;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Controller">
    <children>
-      <AnchorPane fx:id="operaStage" layoutX="337.0" layoutY="99.0" prefHeight="496.0" prefWidth="544.0" style="-fx-background-radius: 10.0px;" visible="false">
+      <AnchorPane fx:id="operaStage" layoutX="337.0" layoutY="99.0" prefHeight="496.0" prefWidth="544.0" style="-fx-background-radius: 10.0px;">
          <children>
             <TextArea fx:id="editArea" blendMode="SOFT_LIGHT" layoutY="413.0" onKeyPressed="#addOperaStageKeyAction" prefHeight="83.0" prefWidth="556.0" style="-fx-text-inner-color: black; -fx-background-color: white; -fx-border-color: white; -fx-border-style: none;" styleClass="editArea" wrapText="true">
                <font>
@@ -45,10 +45,10 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" hvalue="1.0" prefHeight="372.0" prefWidth="556.0" style="-fx-background-color: transparents; -fx-fit-to-height: true;" vvalue="1.0">
-              <content>
-                <AnchorPane fx:id="showPaneParent" minHeight="0.0" minWidth="0.0" prefHeight="372.0" prefWidth="556.0" />
-              </content>
+            <ScrollPane fx:id="scrollPane" fitToHeight="true" focusTraversable="false" hbarPolicy="NEVER" hvalue="1.0" prefHeight="372.0" prefWidth="556.0" style="-fx-background-color: transparents; -fx-fit-to-height: true;" vbarPolicy="NEVER" vvalue="1.0">
+               <content>
+                  <TextFlow fx:id="showPaneParent" maxHeight="-Infinity" maxWidth="520.0" prefHeight="372.0" prefWidth="520.0" />
+               </content>
             </ScrollPane>
          </children>
       </AnchorPane>

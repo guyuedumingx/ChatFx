@@ -10,6 +10,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -24,7 +25,7 @@ public class Controller implements Initializable{
     @FXML
     private VBox friendsBox;
     @FXML
-    private AnchorPane showPaneParent;
+    private TextFlow showPaneParent;
 
     private ChangeStage chStage;
     private EditAndSandWindow editAndSand;

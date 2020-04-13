@@ -1,6 +1,7 @@
 package Model;
 
 import Control.Settings;
+
 import java.io.*;
 
 
@@ -30,6 +31,7 @@ public class History {
     private void tryReadHistoryFile(File historyFile) throws IOException, ClassNotFoundException{
         ois = new ObjectInputStream(new FileInputStream(historyFile));
         historyFlow = (ShowFlow)ois.readObject();
+        System.out.println(historyFlow.getChildren());
     }
 
     private void tryCloseInputStream() {
@@ -72,6 +74,7 @@ public class History {
     }
     private void trywriteHistoryFile() throws IOException{
         oos = new ObjectOutputStream(new FileOutputStream(historyFile));
+        System.out.println(historyFlow.getChildren());
         oos.writeObject(historyFlow);
     }
     private void tryCloseOutputStream() {

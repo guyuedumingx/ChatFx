@@ -7,21 +7,25 @@ import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
 public class EditAndSandWindow {
-    private AnchorPane operaStage;
-    private TextArea editArea;
+    private static AnchorPane operaStage;
+    private static TextArea editArea;
     private static ScrollPane scrollPane;
     private static ShowFlow showFlow;
-    private static AnchorPane showPaneParent;
+    private static TextFlow showPaneParent;
+    private boolean isFromMe = true;
 
-    public EditAndSandWindow(AnchorPane operaStage, AnchorPane showPaneParent) {
+    public EditAndSandWindow(AnchorPane operaStage, TextFlow showPaneParent) {
        this.operaStage = operaStage;
        EditAndSandWindow.showPaneParent = showPaneParent;
        init();
@@ -33,13 +37,28 @@ public class EditAndSandWindow {
     }
 
     public void addText(boolean isFromMe) {
-        MessageItemPane mip = new MessageItemPane(new Message(editArea));
-        mip.setTextAlignment(isFromMe);
-        appendMessage(mip);
+        this.isFromMe = isFromMe;
+        appendMessage(addMessageTtemPane(new Message(editArea)));
     }
 
-    private void appendMessage(Node Msg) {
-        showFlow.getChildren().addAll(addTime(),Msg);
+    public void addText(String msg, boolean isFromMe) {
+        appendMessage(addMessageTtemPane(new Message(msg)));
+        this.isFromMe = isFromMe;
+    }
+
+    public void addPic(ImageView img, boolean isFromMe) {
+        appendMessage(addMessageTtemPane(img));
+        this.isFromMe = isFromMe;
+    }
+
+    private MessageItemPane addMessageTtemPane(Node node) {
+        MessageItemPane mip = new MessageItemPane(node);
+        mip.setTextAlignment();
+        return mip;
+    }
+
+    private void appendMessage(Node msg) {
+        showFlow.getChildren().addAll(addTime(), msg);
         scrollPane.setVvalue(1.0);
     }
 
@@ -50,14 +69,14 @@ public class EditAndSandWindow {
         return mip;
     }
 
-    class MessageItemPane extends FlowPane {
+    class MessageItemPane extends FlowPane implements Serializable {
 
         public MessageItemPane(Node node) {
             getChildren().addAll(node);
             prefWidthProperty().bind(showFlow.widthProperty());
             setPadding(new Insets(5));
         }
-        public void setTextAlignment(boolean isFromMe) {
+        public void setTextAlignment() {
             if (isFromMe)
                 setRight();
             else
@@ -91,7 +110,7 @@ public class EditAndSandWindow {
     }
 }
 
-class TimeLabel extends Label {
+class TimeLabel extends Label implements Serializable{
     private Date nowTime = new Date();
     private Date lastMessageTime = Settings.getLastMessageTime();
     private SimpleDateFormat sdf;
@@ -132,17 +151,21 @@ class TimeLabel extends Label {
 }
 
 //实现消息的包装
-class Message extends ShowFlow{
+class Message extends ShowFlow implements Serializable{
     private Text messageText = new Text();
     private String myBgColor = "#cad3c3";
     private String hisBgColor = "e4dfd7";
     private String showColor = "#cad3c3";
 
     public Message(TextArea editArea) {
-        init();
-        messageText.setText(editArea.getText().trim());
+        this(editArea.getText().trim());
         editArea.setText("");
         getChildren().addAll(messageText);
+    }
+
+    public Message(String messageText) {
+        init();
+        this.messageText.setText(messageText);
     }
 
     private void init() {
