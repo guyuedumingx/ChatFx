@@ -39,11 +39,13 @@ public class ChangeStage {
             contactStage.setVisible(true);
     }
 
-    public void toOpera() {
+    public void toOpera(Friend f) {
         if (operaStage.isVisible())
             operaStage.setVisible(false);
-        else
+        else {
             operaStage.setVisible(true);
+            EditAndSandWindow.setShowFlow(f);
+        }
     }
 
     public static ChangeStage getChangeStage(AnchorPane primaryStage) {

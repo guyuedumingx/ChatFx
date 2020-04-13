@@ -18,12 +18,13 @@ import java.util.Date;
 public class EditAndSandWindow {
     private AnchorPane operaStage;
     private TextArea editArea;
-    private ScrollPane scrollPane;
-    private TextFlow showFlow;
+    private static ScrollPane scrollPane;
+    private static TextFlow showFlow;
+    private static AnchorPane showPaneParent;
 
-    public EditAndSandWindow(AnchorPane operaStage, TextFlow showFlow) {
+    public EditAndSandWindow(AnchorPane operaStage, AnchorPane showPaneParent) {
        this.operaStage = operaStage;
-       this.showFlow = showFlow;
+       EditAndSandWindow.showPaneParent = showPaneParent;
        init();
     }
 
@@ -75,6 +76,16 @@ public class EditAndSandWindow {
         public void setCenter() {
             setAlignment(Pos.BOTTOM_CENTER);
         }
+    }
+
+    public static ScrollPane getScrollPane() {
+        return scrollPane;
+    }
+
+    public static void setShowFlow(Friend f) {
+        EditAndSandWindow.showFlow = f.getHistoryFlow();
+        EditAndSandWindow.showPaneParent.getChildren().clear();
+        EditAndSandWindow.showPaneParent.getChildren().add(showFlow);
     }
 }
 

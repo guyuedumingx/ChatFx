@@ -8,10 +8,10 @@ import java.io.IOException;
 
 public class Friend extends User {
 
-    String histroyFileName = name + ".txt";
+    String histroyFileName;
     Settings set = Settings.getSettings();
 
-    File historyFile = new File(histroyFileName);
+    File historyFile;
 
     TextFlow historyFlow;
 
@@ -22,6 +22,8 @@ public class Friend extends User {
     }
 
     private void init() {
+        histroyFileName = name + ".txt";
+        historyFile = new File(histroyFileName);
         setDefaultHistoryFile();
     }
 
@@ -39,10 +41,12 @@ public class Friend extends User {
         }
     }
 
-    private TextFlow getHistoryFlow() {
-        if (historyFlow == null)
-            return new History().readHistory(historyFile);
-        else
-            return historyFlow;
+    public TextFlow getHistoryFlow() {
+        if (historyFlow == null) {
+            historyFlow = new History().readHistory(historyFile);
+            historyFlow.prefHeightProperty().bind(EditAndSandWindow.getScrollPane().prefHeightProperty());
+            historyFlow.prefWidthProperty().bind(EditAndSandWindow.getScrollPane().prefWidthProperty());
+        }
+        return historyFlow;
     }
 }

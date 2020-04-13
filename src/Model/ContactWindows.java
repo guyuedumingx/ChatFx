@@ -26,9 +26,10 @@ public class ContactWindows {
 class FButton extends Button {
 
     private ChangeStage chStage;
-
+    private Friend f;
    FButton(Friend f) {
        super(f.getName());
+       this.f = f;
        init();
    }
 
@@ -51,7 +52,7 @@ class FButton extends Button {
    private void setChangeToOpera() {
        addEventFilter(MouseEvent.ANY, e-> {
            if (e.getEventType() == MouseEvent.MOUSE_PRESSED) {
-               chStage.toOpera();
+               chStage.toOpera(f);
            }
        });
    }

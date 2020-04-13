@@ -26,15 +26,6 @@
                   <Image url="@images/sand.png" />
                </image>
             </ImageView>
-            <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" hvalue="1.0" layoutY="3.0" prefHeight="372.0" prefWidth="556.0" style="-fx-background-color: transparent; -fx-fit-to-height: true; -fx-background-radius: 15.0px;" vvalue="1.0">
-               <content>
-                  <TextFlow fx:id="showFlow" prefHeight="363.0" prefWidth="564.0" style="-fx-background-radius: 15.0px;" styleClass="showArea">
-                     <padding>
-                        <Insets left="10.0" top="10.0" />
-                     </padding>
-                  </TextFlow>
-               </content>
-            </ScrollPane>
             <AnchorPane layoutY="374.0" prefHeight="39.0" prefWidth="556.0" style="-fx-background-color: white;">
                <children>
                   <ImageView fx:id="butGif" fitHeight="31.0" fitWidth="31.0" layoutX="123.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
@@ -54,6 +45,11 @@
                   </ImageView>
                </children>
             </AnchorPane>
+            <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" hvalue="1.0" prefHeight="372.0" prefWidth="556.0" style="-fx-background-color: transparents; -fx-fit-to-height: true;" vvalue="1.0">
+              <content>
+                <AnchorPane fx:id="showPaneParent" minHeight="0.0" minWidth="0.0" prefHeight="372.0" prefWidth="556.0" />
+              </content>
+            </ScrollPane>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="toolStage" prefHeight="74.0" prefWidth="328.0" style="-fx-background-color: #5d655f; -fx-background-radius: 20.0px;">

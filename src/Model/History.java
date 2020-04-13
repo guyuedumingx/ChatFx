@@ -31,7 +31,8 @@ public class History {
 
     private void tryCloseInputStream() {
         try {
-            ois.close();
+            if (ois != null)
+                ois.close();
         }
         catch (IOException e) {
 
@@ -57,7 +58,8 @@ public class History {
     }
     private void tryCloseOutputStream() {
         try {
-            oos.close();
+            if (oos != null)
+                oos.close();
         }
         catch (IOException e) {
 
