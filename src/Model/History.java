@@ -1,7 +1,6 @@
 package Model;
 
 import Control.Settings;
-import javafx.scene.text.TextFlow;
 import java.io.*;
 
 
@@ -9,17 +8,18 @@ public class History {
     Settings set = Settings.getSettings();
     ObjectInputStream ois;
     ObjectOutputStream oos;
-    TextFlow historyFlow;
+    ShowFlow historyFlow;
     File historyFile;
 
-    public TextFlow readHistory(File historyFile) {
+    public ShowFlow readHistory(File historyFile) {
         this.historyFile = historyFile;
         try {
             setDefaultHistoryFile();
             tryReadHistoryFile(historyFile);
         }
         catch (Exception e) {
-            historyFlow = new TextFlow();
+            e.printStackTrace();
+            historyFlow = new ShowFlow();
         }
         finally {
             tryCloseInputStream();
@@ -29,7 +29,7 @@ public class History {
 
     private void tryReadHistoryFile(File historyFile) throws IOException, ClassNotFoundException{
         ois = new ObjectInputStream(new FileInputStream(historyFile));
-        historyFlow = (TextFlow)ois.readObject();
+        historyFlow = (ShowFlow)ois.readObject();
     }
 
     private void tryCloseInputStream() {
@@ -56,7 +56,7 @@ public class History {
         writeHistory(f.getHistoryFlow(), f.historyFile);
     }
 
-    public void writeHistory(TextFlow historyFlow, File historyFile) {
+    public void writeHistory(ShowFlow historyFlow, File historyFile) {
         this.historyFile = historyFile;
         this.historyFlow = historyFlow;
        try {
@@ -64,7 +64,7 @@ public class History {
            trywriteHistoryFile();
        }
        catch (IOException e) {
-
+            e.printStackTrace();
        }
        finally {
           tryCloseOutputStream();
@@ -97,5 +97,4 @@ public class History {
 
         }
     }
-
 }

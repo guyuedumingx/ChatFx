@@ -2,21 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Model/ShowFlow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lisi.txt" beforeDir="false" afterPath="$PROJECT_DIR$/lisi.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/null.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chat/Control/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat/Control/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lisi.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Chat/Model/ChangeStage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat/Model/ChangeStage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Chat/Model/EditAndSandWindow$MessageItemPane.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat/Model/EditAndSandWindow$MessageItemPane.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Chat/Model/EditAndSandWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat/Model/EditAndSandWindow.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Chat/Model/Friend.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat/Model/Friend.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Chat/Model/History.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat/Model/History.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Chat/Model/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat/Model/Message.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Chat/Model/TimeLabel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat/Model/TimeLabel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/ChangeStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ChangeStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Chat/View/windows.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat/View/windows.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/EditAndSandWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EditAndSandWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Friend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Friend.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/History.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/History.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zhangsan.txt" beforeDir="false" afterPath="$PROJECT_DIR$/zhangsan.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/windows.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/windows.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhangsan.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,7 +235,8 @@
       <workItem from="1586730038026" duration="3899000" />
       <workItem from="1586734503409" duration="2599000" />
       <workItem from="1586737125003" duration="2387000" />
-      <workItem from="1586762011393" duration="1814000" />
+      <workItem from="1586762011393" duration="4588000" />
+      <workItem from="1586767253140" duration="348000" />
     </task>
     <servers />
   </component>
@@ -246,6 +248,10 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="652" y="359" width="606" height="396" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586766663058">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="652" y="359" width="606" height="396" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1586766663058" />
     <state x="768" y="240" width="374" height="633" key="#com.intellij.ide.util.MemberChooser" timestamp="1586370306731">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -262,42 +268,42 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="466" height="486" key="DebuggerActiveHint/0.27.1920.1053@0.27.1920.1053" timestamp="1586734566420" />
-    <state width="1878" height="63" key="GridCell.Tab.0.bottom" timestamp="1586763748271">
+    <state width="1878" height="154" key="GridCell.Tab.0.bottom" timestamp="1586767600900">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1866" height="65" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1586358200748" />
-    <state width="1878" height="63" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1586763748271" />
-    <state width="1878" height="63" key="GridCell.Tab.0.center" timestamp="1586763748270">
+    <state width="1878" height="154" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1586767600900" />
+    <state width="1878" height="154" key="GridCell.Tab.0.center" timestamp="1586767600899">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1866" height="65" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1586358200748" />
-    <state width="1878" height="63" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1586763748270" />
-    <state width="1878" height="63" key="GridCell.Tab.0.left" timestamp="1586763748270">
+    <state width="1878" height="154" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1586767600899" />
+    <state width="1878" height="154" key="GridCell.Tab.0.left" timestamp="1586767600899">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1866" height="65" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1586358200748" />
-    <state width="1878" height="63" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1586763748270" />
-    <state width="1878" height="63" key="GridCell.Tab.0.right" timestamp="1586763748271">
+    <state width="1878" height="154" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1586767600899" />
+    <state width="1878" height="154" key="GridCell.Tab.0.right" timestamp="1586767600899">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1866" height="65" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1586358200748" />
-    <state width="1878" height="63" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1586763748271" />
-    <state width="1878" height="63" key="GridCell.Tab.1.bottom" timestamp="1586763751795">
+    <state width="1878" height="154" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1586767600899" />
+    <state width="1878" height="154" key="GridCell.Tab.1.bottom" timestamp="1586767600900">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1878" height="63" key="GridCell.Tab.1.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1586763751795" />
-    <state width="1878" height="63" key="GridCell.Tab.1.center" timestamp="1586763751795">
+    <state width="1878" height="154" key="GridCell.Tab.1.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1586767600900" />
+    <state width="1878" height="154" key="GridCell.Tab.1.center" timestamp="1586767600900">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1878" height="63" key="GridCell.Tab.1.center/0.27.1920.1053@0.27.1920.1053" timestamp="1586763751795" />
-    <state width="1878" height="63" key="GridCell.Tab.1.left" timestamp="1586763751794">
+    <state width="1878" height="154" key="GridCell.Tab.1.center/0.27.1920.1053@0.27.1920.1053" timestamp="1586767600900" />
+    <state width="1878" height="154" key="GridCell.Tab.1.left" timestamp="1586767600900">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1878" height="63" key="GridCell.Tab.1.left/0.27.1920.1053@0.27.1920.1053" timestamp="1586763751794" />
-    <state width="1878" height="63" key="GridCell.Tab.1.right" timestamp="1586763751795">
+    <state width="1878" height="154" key="GridCell.Tab.1.left/0.27.1920.1053@0.27.1920.1053" timestamp="1586767600900" />
+    <state width="1878" height="154" key="GridCell.Tab.1.right" timestamp="1586767600900">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1878" height="63" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1586763751795" />
+    <state width="1878" height="154" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1586767600900" />
     <state x="449" y="240" width="1011" height="634" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1586728783158">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -306,19 +312,5 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="658" y="174" width="593" height="766" key="refactoring.ChangeSignatureDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1586730171435" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/Model/History.java</url>
-          <line>14</line>
-          <properties class="Model.History" method="readHistory">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

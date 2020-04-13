@@ -10,7 +10,6 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.text.Text;
-import javafx.scene.text.TextFlow;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -19,7 +18,7 @@ public class EditAndSandWindow {
     private AnchorPane operaStage;
     private TextArea editArea;
     private static ScrollPane scrollPane;
-    private static TextFlow showFlow;
+    private static ShowFlow showFlow;
     private static AnchorPane showPaneParent;
 
     public EditAndSandWindow(AnchorPane operaStage, AnchorPane showPaneParent) {
@@ -87,7 +86,7 @@ public class EditAndSandWindow {
         EditAndSandWindow.showPaneParent.getChildren().clear();
         EditAndSandWindow.showPaneParent.getChildren().add(showFlow);
     }
-    public static TextFlow getShowFlow() {
+    public static ShowFlow getShowFlow() {
         return showFlow;
     }
 }
@@ -133,7 +132,7 @@ class TimeLabel extends Label {
 }
 
 //实现消息的包装
-class Message extends TextFlow{
+class Message extends ShowFlow{
     private Text messageText = new Text();
     private String myBgColor = "#cad3c3";
     private String hisBgColor = "e4dfd7";

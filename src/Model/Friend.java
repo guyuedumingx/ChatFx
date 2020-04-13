@@ -1,7 +1,6 @@
 package Model;
 
 import Control.Settings;
-import javafx.scene.text.TextFlow;
 
 import java.io.File;
 
@@ -12,7 +11,7 @@ public class Friend extends User {
 
     File historyFile;
 
-    TextFlow historyFlow;
+    ShowFlow historyFlow;
 
     public Friend(String name, int account) {
         this.name = name;
@@ -21,11 +20,11 @@ public class Friend extends User {
     }
 
     private void init() {
-        histroyFileName = name + ".txt";
+        histroyFileName = name + ".ser";
         historyFile = new File(histroyFileName);
     }
 
-    public TextFlow getHistoryFlow() {
+    public ShowFlow getHistoryFlow() {
         if (historyFlow == null) {
             historyFlow = new History().readHistory(historyFile);
             historyFlow.prefHeightProperty().bind(EditAndSandWindow.getScrollPane().prefHeightProperty());
