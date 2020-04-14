@@ -1,47 +1,63 @@
 package Model;
 
 import Control.Settings;
+import org.dom4j.Document;
+import org.dom4j.DocumentHelper;
+import org.dom4j.Element;
+import org.dom4j.io.SAXReader;
+import java.util.Iterator;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
 
 public class ReadHistory extends History {
-    ObjectInputStream ois;
+    Friend friend;
+    static Document document;
+    static Element rootElement;
+    ShowFlow historyFlow;
 
     public ReadHistory(Friend friend) {
         this.historyFile = Settings.getHistoryFile(friend);
+        this.friend = friend;
     }
 
     public ShowFlow readHistory() {
+        historyFlow = new ShowFlow();
+
         try {
             setDefaultHistoryFile();
-            tryReadHistoryFile();
+            readDocument(friend);
+            readMsg();
         }
         catch (Exception e) {
             e.printStackTrace();
-            historyFlow = new ShowFlow();
-        }
-        finally {
-            tryCloseInputStream();
         }
         return historyFlow;
     }
 
-    private void tryReadHistoryFile() throws IOException, ClassNotFoundException{
-        ois = new ObjectInputStream(new FileInputStream(historyFile));
-        historyFlow = (ShowFlow)ois.readObject();
-        System.out.println(historyFlow.getChildren());
+    private void readMsg() {
+        for (Iterator<Element> root = rootElement.elementIterator("node"); root.hasNext();) {
+            Element node = root.next();
+
+            if ("msg".equals(node.element("type"))) {
+                historyFlow.addText(node.element("content").getText(),
+                        Boolean.getBoolean(node.element("fromMe").getText()));
+            }
+        }
     }
 
-    private void tryCloseInputStream() {
+    public void readDocument(Friend f) {
         try {
-            if (ois != null)
-                ois.close();
+            SAXReader saxReader = new SAXReader();
+            document = saxReader.read(historyFile);
+            rootElement = document.getRootElement();
+        } catch (Exception e) {
+            document = DocumentHelper.createDocument();
+            rootElement = document.addElement("root");
+            rootElement.addComment("This is a history file");
         }
-        catch (IOException e) {
+    }
 
-        }
+    public Document getDocument() {
+        return document;
     }
 }
 

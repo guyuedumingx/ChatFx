@@ -1,29 +1,24 @@
 package Model;
 
-import Control.Settings;
 
-import java.io.File;
+import org.dom4j.Document;
+
 
 public class Friend extends User {
 
-    File historyFile;
+    Document historyDocument;
     ShowFlow historyFlow;
 
     public Friend(String name, int account) {
         this.name = name;
         this.account = account;
-        init();
-    }
-
-    private void init() {
-        historyFile = Settings.getHistoryFile(this);
     }
 
     public ShowFlow getHistoryFlow() {
         if (historyFlow == null) {
-            historyFlow = new ReadHistory(this).readHistory();
-            historyFlow.prefHeightProperty().bind(EditAndSandWindow.getScrollPane().prefHeightProperty());
-            historyFlow.prefWidthProperty().bind(EditAndSandWindow.getScrollPane().prefWidthProperty());
+            ReadHistory rHistory = new ReadHistory(this);
+            historyFlow =rHistory.readHistory();
+            historyDocument = rHistory.getDocument();
         }
         return historyFlow;
     }

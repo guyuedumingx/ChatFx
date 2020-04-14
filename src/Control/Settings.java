@@ -38,7 +38,7 @@ public class Settings {
     }
 
     public static File getHistoryFile(Friend f) {
-        File file = new File(getHistoryDic()+f.getName()+"/"+ HISTORYFILENAME);
+        File file = new File(f.getName()+ HISTORYFILENAME);
         if (!file.exists())
             tryCreateHistoryFile(file);
         return file;
@@ -56,9 +56,10 @@ public class Settings {
     public static File getPicPath() {
         File f = new File(resPath + PICTUREFOLDERPATH);
         if (!f.exists()) {
-           f.mkdir();
+           f.mkdirs();
         }
         return f;
     }
+
 
 }

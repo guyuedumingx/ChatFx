@@ -30,11 +30,11 @@ public class Controller implements Initializable{
     private ChangeStage chStage;
     private EditAndSandWindow editAndSand;
     private ContactWindows contactWindows;
-    private WriteHistory wHistory;
+
     @FXML
     private void addToolBarAction(MouseEvent e) {
        if(e.getTarget() == butClose) {
-           wHistory.writeHistory();
+           WriteHistory.writeHistory();
            System.exit(0);
        }
        else if(e.getTarget() == butContact) {
@@ -48,14 +48,14 @@ public class Controller implements Initializable{
     @FXML
     private void addOperaStageMouseAction(MouseEvent e) {
         if(e.getTarget() == butSand) {
-            editAndSand.addText(true);
+            EditAndSandWindow.showFlow.addText(true);
         }
     }
 
     @FXML
     private void addOperaStageKeyAction(KeyEvent e) {
         if (e.getCode() == KeyCode.ENTER) {
-            editAndSand.addText(true);
+            EditAndSandWindow.showFlow.addText(true);
         }
     }
 
@@ -70,7 +70,6 @@ public class Controller implements Initializable{
         chStage = ChangeStage.getChangeStage(primaryStage);
         editAndSand = new EditAndSandWindow(operaStage, showPaneParent);
         contactWindows = new ContactWindows(friendsBox);
-        wHistory = new WriteHistory();
     }
 }
 
