@@ -20,20 +20,23 @@ public class ShowFlow extends TextFlow implements Serializable {
     static TextArea editArea = EditAndSandWindow.editArea;
     static ScrollPane scrollPane = EditAndSandWindow.scrollPane;
     public static boolean isFromMe;
+    private Friend friend;
 
-    public ShowFlow() {
+    public ShowFlow(Friend friend) {
+        this.friend = friend;
         prefHeightProperty().bind(scrollPane.prefHeightProperty());
         prefWidthProperty().bind(scrollPane.prefWidthProperty());
     }
 
     public void addText(boolean isFromMe) {
-        ShowFlow.isFromMe = isFromMe;
-        appendMessage(addMessageTtemPane(new Message(editArea)));
+        String s = editArea.getText().trim();
+        addText(s,isFromMe);
     }
 
     public void addText(String msg, boolean isFromMe) {
         ShowFlow.isFromMe = isFromMe;
         appendMessage(addMessageTtemPane(new Message(msg)));
+        WriteHistory.saveMsgToXml(this,msg,isFromMe);
     }
 
     public void addPic(ImageView img, boolean isFromMe) {
@@ -60,6 +63,10 @@ public class ShowFlow extends TextFlow implements Serializable {
         MessageItemPane mip = new MessageItemPane(this,time);
         mip.setTextAlignment(MessageItemPane.SETCENTER);
         return mip;
+    }
+
+    public Friend getFriend() {
+        return friend;
     }
 }
 
@@ -104,7 +111,7 @@ class TimeLabel extends Label implements Serializable{
 
 
 //实现消息的包装
-class Message extends ShowFlow implements Serializable{
+class Message extends TextFlow implements Serializable{
     public Text msgText = new Text();
     private String myBgColor = "#cad3c3";
     private String hisBgColor = "e4dfd7";
@@ -119,7 +126,6 @@ class Message extends ShowFlow implements Serializable{
         msgText.setText(messageText);
         init();
         getChildren().addAll(msgText);
-        WriteHistory.saveMsgToXml(this);
     }
 
     private void init() {

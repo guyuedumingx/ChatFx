@@ -20,7 +20,7 @@ public class ReadHistory extends History {
     }
 
     public ShowFlow readHistory() {
-        historyFlow = new ShowFlow();
+        historyFlow = new ShowFlow(friend);
 
         try {
             setDefaultHistoryFile();
@@ -36,8 +36,8 @@ public class ReadHistory extends History {
     private void readMsg() {
         for (Iterator<Element> root = rootElement.elementIterator("node"); root.hasNext();) {
             Element node = root.next();
-
-            if ("msg".equals(node.element("type"))) {
+            System.out.println(node.element("type").getName());
+            if ("msg".equals(node.element("type").getText())) {
                 historyFlow.addText(node.element("content").getText(),
                         Boolean.getBoolean(node.element("fromMe").getText()));
             }

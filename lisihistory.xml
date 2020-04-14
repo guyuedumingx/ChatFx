@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<root> 
+  <!--This is a history file-->  
+  <node type="msg" content="sdfgsdfgsdfgsdfg" fromMe="true"/>  
+  <node type="msg" content="sdfg" fromMe="true"/>  
+  <node type="msg" content="asdfasdfasdfasdf" fromMe="true"/>
+</root>

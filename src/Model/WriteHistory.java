@@ -27,7 +27,7 @@ public class WriteHistory extends History{
         XMLWriter writer = null;
         historyFile = Settings.getHistoryFile(f);
         try {
-            writer = new XMLWriter(new FileWriter(historyFile));
+            writer = new XMLWriter(new FileWriter(historyFile),format);
             writer.write(document);
         }
         catch (IOException e) {
@@ -45,13 +45,13 @@ public class WriteHistory extends History{
         }
     }
 
-    public static void saveMsgToXml(Friend f,Message msg) {
-        document = f.historyDocument;
+    public static void saveMsgToXml(ShowFlow showFlow,String str,boolean isFromMe) {
+        document = showFlow.getFriend().historyDocument;
         rootElement = document.getRootElement();
         Element nodeElement = rootElement.addElement("node");
         nodeElement.addAttribute("type","msg");
-        nodeElement.addAttribute("content",msg.msgText.getText());
-        nodeElement.addAttribute("fromMe",);
+        nodeElement.addAttribute("content",str);
+        nodeElement.addAttribute("fromMe",String.valueOf(isFromMe));
     }
 
 
