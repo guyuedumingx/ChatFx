@@ -1,67 +1,116 @@
 package Model;
 
 import java.io.*;
-
-import Control.Settings;
+import java.util.Iterator;
+import Control.Log4Chat;
 import org.dom4j.*;
 import org.dom4j.io.OutputFormat;
 import org.dom4j.io.XMLWriter;
 
-public class WriteHistory extends History{
 
-    static File historyFile;
+public class WriteHistory {
 
-    public static void writeHistory() {
-        writeHistory(Operator.getOperator());
+    private static final String TEXT = "text";
+    private static final String TIME = "time";
+    private static final String PICTURE = "picture";
+    private static final String FROMME = "fromMe";
+
+    private static File hisFile;
+    private static Document document;
+    private static XMLWriter writer;
+    private static ShowFlow flow;
+    private static Element rootElement;
+    private static Element nodeElement;
+
+    private WriteHistory() {}
+
+    public static void write() {
+        write(Operator.getOperator());
     }
 
-    public static void writeHistory(Operator o) {
+    public static void write(Operator o) {
         for(Friend f : o.getFriendList()) {
-            writeHistory(f);
+            write(f);
         }
     }
 
-    private static void writeHistory(Friend f) {
-        OutputFormat format = OutputFormat.createPrettyPrint();
-        format.setEncoding("GBK");
-        XMLWriter writer = null;
-        historyFile = Settings.getHistoryFile(f);
+    private static void write(Friend f) {
+        hisFile = f.getHistoryFile();
+        document = f.getDocument();
+        trywriteDocument();
+    }
+
+    private static void trywriteDocument() {
         try {
-            writer = new XMLWriter(new FileWriter(historyFile),format);
+            writeDocument();
+        } catch (IOException e) {
+            Log4Chat.printError(e);
+        } finally {
+            tryCloseWrite();
+        }
+    }
+
+    private static void writeDocument() throws IOException {
+        if (document != null) {
+            writer = new XMLWriter(new FileWriter(hisFile), setFormat());
             writer.write(document);
         }
-        catch (IOException e) {
+    }
 
-        }
-        finally {
-            if (writer != null) {
-                try {
+    private static OutputFormat setFormat() {
+        OutputFormat format = OutputFormat.createPrettyPrint();
+        format.setEncoding("UTF-8");
+        return format;
+    }
+
+    private static void tryCloseWrite() {
+            try {
+                if (writer != null)
                     writer.close();
-                }
-                catch (IOException e) {
-
-                }
+            } catch (IOException e) {
+                Log4Chat.printError(e);
             }
-        }
     }
 
-    public static void saveMsgToXml(ShowFlow showFlow,String str,boolean isFromMe) {
-        document = showFlow.getFriend().historyDocument;
+    public static void saveMsgToXml(ShowFlow showFlow, String text, boolean isFromMe) {
+        flow = showFlow;
+        add(TEXT,text,isFromMe);
+    }
+
+    public static void saveTimeToXml(ShowFlow showFlow,TimeLabel timeLabel) {
+        flow = showFlow;
+        String date = timeLabel.getTrueTime();
+        add(TIME,date);
+    }
+
+    public static void saveImageToXml(ShowFlow showFlow,String url) {
+        flow = showFlow;
+        add("img",url, true);
+    }
+
+    public static void clearHistory(Friend f) {
+       rootElement = f.getDocument().getRootElement();
+       Iterator iterator = rootElement.elementIterator("node");
+       while (iterator.hasNext()) {
+           rootElement.remove((Element)iterator.next());
+       }
+    }
+
+    private static void add(String type, String content, boolean isFromeMe) {
+        add(type,content);
+        nodeElement.addAttribute(FROMME,String.valueOf(isFromeMe));
+    }
+
+    private static void add(String type, String content) {
+        nodeElement = addNodeElement();
+        nodeElement.addAttribute("type",type);
+        nodeElement.addAttribute("content",content);
+    }
+
+    private static Element addNodeElement() {
+        document = flow.getFriend().getDocument();
         rootElement = document.getRootElement();
-        Element nodeElement = rootElement.addElement("node");
-        nodeElement.addAttribute("type","msg");
-        nodeElement.addAttribute("content",str);
-        nodeElement.addAttribute("fromMe",String.valueOf(isFromMe));
+        return rootElement.addElement("node");
     }
-
-
-    /*
-    public void savePicToXml(ImageView img) {
-        Element nodeElement = rootElement.addElement("node");
-        nodeElement.addAttribute("type","picture");
-        nodeElement.addAttribute("path", Settings.getPicPath()+img.getImageURL().toString());
-    }
-
-     */
 }
 

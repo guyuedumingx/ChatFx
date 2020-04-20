@@ -6,6 +6,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.TextFlow;
 
 
+//负责聊天操作区域，可以向里面添加朋友的聊天框
 public class EditAndSandWindow {
     private static AnchorPane operaStage;
     public static TextArea editArea;

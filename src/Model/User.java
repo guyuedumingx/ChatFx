@@ -1,11 +1,12 @@
 package Model;
 
-import javafx.scene.image.ImageView;
+import javafx.scene.image.Image;
+
 
 public class User {
     String name;
     int account;
-    ImageView icon;
+    Image profilePic;
 
     public void setName(String name) {
         this.name = name;
@@ -21,11 +22,11 @@ public class User {
         return account;
     }
 
-    public void setIcon(ImageView icon) {
-        this.icon = icon;
+    public void setProfilePic(Image profilePic) {
+        this.profilePic = profilePic;
     }
-    public ImageView getIcon() {
-        return icon;
+    public Image getProfilePic() {
+        return profilePic;
     }
 
 }

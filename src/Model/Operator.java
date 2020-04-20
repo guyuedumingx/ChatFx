@@ -1,8 +1,11 @@
 package Model;
 
+import javafx.scene.image.Image;
+
 import java.util.ArrayList;
 
 
+//登录软件的操作者
 public class Operator extends User{
     private static Operator operator = new Operator();
     private ArrayList<Friend> friendList = new ArrayList<>();
@@ -10,6 +13,7 @@ public class Operator extends User{
     private Operator() {
         setName("wangwu");
         setAccount(1111);
+        profilePic = new Image("file:..\\..\\2.jpg");
     }
 
     public void addFriend(Friend f) {
@@ -26,7 +30,7 @@ public class Operator extends User{
 
     public Friend getUserInfo() {
         Friend f = new Friend(name, account);
-        f.setIcon(icon);
+        f.setProfilePic(profilePic);
         return f;
     }
 
